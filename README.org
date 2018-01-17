@@ -1,0 +1,3 @@
+* mirror the thing with bash script
+[[https://travis-ci.org/smile921/mirror9211.svg?branch=master]]
++ get the GoLang release 1.9.2 and mirror it 
