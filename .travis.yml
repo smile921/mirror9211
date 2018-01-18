@@ -24,7 +24,7 @@ script:
   - wget https://dl.google.com/go/go1.9.2.windows-amd64.msi -P ./disted/
   - wget https://dl.google.com/go/go1.9.2.src.tar.gz  -P ./disted/
   - rm -rf ../release
-  - git clone https://mirror921:$1@gitee.com/mirror921/mirror921.git ../release
+  - git clone https://mirror921:0987654321abc@gitee.com/mirror921/mirror921.git ../release
   - git config --global user.email "lanyi921@qq.com"
   - git config --global user.name "Travis CI"
   - cp -rf ./disted/ ../release/
