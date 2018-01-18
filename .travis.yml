@@ -12,7 +12,8 @@ before_install:
 
 script:
 #  - install.sh
-  - mkdir disted && bash install.sh
+  - ls -lh *
+  - bash install.sh
   - ls -lh ./disted/
   - ls -lh .
   - cd ./disted/
