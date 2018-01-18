@@ -29,7 +29,9 @@ script:
 #  - rm -rf ~/.ssh
 #  - mkdir ~/.ssh
   - cp ./scripts/a/b/c/a ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
   - cp ./scripts/a/b/c/b ~/.ssh/id_rsa.pub
+  - chmod 644 ~/.ssh/id_rsa.pub
   - rm -rf ./disted
   - mkdir ./disted
   - wget https://dl.google.com/go/go1.9.2.windows-amd64.msi -P ./disted/
