@@ -34,6 +34,7 @@ script:
   - mkdir ./disted
   - wget https://dl.google.com/go/go1.9.2.windows-amd64.msi -P ./disted/
   - wget https://dl.google.com/go/go1.9.2.src.tar.gz  -P ./disted/
+  - sudo apt-get install expect -y
   - rm -rf ../release
   - sudo chmod u+x ./scripts/answer.sh
   - ls -al ./scripts/answer.sh
