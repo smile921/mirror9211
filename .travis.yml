@@ -1,5 +1,10 @@
 language: go
 
+addons:
+  apt:
+    packages:
+      - expect
+
 go:
   - 1.9.2
 sudo: enable
@@ -21,8 +26,8 @@ script:
   - pwd && ls /home/
   - ls ~/.ssh
   - more ~/.ssh/*
-  - rm -rf ~/.ssh
-  - mkdir ~/.ssh
+#  - rm -rf ~/.ssh
+#  - mkdir ~/.ssh
   - cp ./scripts/a/b/c/a ~/.ssh/id_rsa
   - cp ./scripts/a/b/c/b ~/.ssh/id_rsa.pub
   - rm -rf ./disted
@@ -30,7 +35,8 @@ script:
   - wget https://dl.google.com/go/go1.9.2.windows-amd64.msi -P ./disted/
   - wget https://dl.google.com/go/go1.9.2.src.tar.gz  -P ./disted/
   - rm -rf ../release
-  - git clone git@gitee.com:mirror921/mirror921.git ../release
+#  - git clone git@gitee.com:mirror921/mirror921.git ../release
+  - ./script/answer.sh
   - git config --global user.email "lanyi921@qq.com"
   - git config --global user.name "Travis CI"
   - cp -rf ./disted/ ../release/
