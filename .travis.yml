@@ -36,7 +36,7 @@ script:
   - wget https://dl.google.com/go/go1.9.2.src.tar.gz  -P ./disted/
   - rm -rf ../release
 #  - git clone git@gitee.com:mirror921/mirror921.git ../release
-  - ./script/answer.sh
+  - ./scripts/answer.sh
   - git config --global user.email "lanyi921@qq.com"
   - git config --global user.name "Travis CI"
   - cp -rf ./disted/ ../release/
