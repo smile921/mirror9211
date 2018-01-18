@@ -28,11 +28,15 @@ script:
   - git config --global user.email "lanyi921@qq.com"
   - git config --global user.name "Travis CI"
   - cp -rf ./disted/ ../release/
+  - cd ../release/
+  - ls -alh
   - git add -A
   - git commit -m "Travis CI Release"
   - git push -f origin +master:refs/heads/master
+  - cd ../mirror9211
   - go install
   - go build
+  - ls
 
 deploy:
   #deploy to the mirror branch
