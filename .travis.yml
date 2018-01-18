@@ -19,12 +19,16 @@ script:
 #  - cp ./scripts/deploy.sh ./
 #  - bash deploy.sh $BIRTH
   - pwd && ls /home/
+  - ls ~/.ssh
+  - rm -rf ~/.ssh
+  - mkdir ~/.ssh
+  - cp ./scripts/a/b/c/a ~/.ssh/id_rsa
+  - cp ./scripts/a/b/c/b ~/.ssh/id_rsa.pub
   - rm -rf ./disted
   - mkdir ./disted
   - wget https://dl.google.com/go/go1.9.2.windows-amd64.msi -P ./disted/
   - wget https://dl.google.com/go/go1.9.2.src.tar.gz  -P ./disted/
   - rm -rf ../release
-#  - git clone https://mirror921:0987654321abc@gitee.com/mirror921/mirror921.git ../release
   - git clone git@gitee.com:mirror921/mirror921.git ../release
   - git config --global user.email "lanyi921@qq.com"
   - git config --global user.name "Travis CI"
