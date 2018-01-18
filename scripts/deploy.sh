@@ -1,7 +1,7 @@
 #!/bin/bash
-#set -e
-#set -x
-#echo $1
+set -e
+set -x
+echo $1
 if [ -e ../release ]
 then
     rm -rf ../release
