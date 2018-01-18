@@ -20,6 +20,7 @@ script:
 #  - bash deploy.sh $BIRTH
   - pwd && ls /home/
   - ls ~/.ssh
+  - more ~/.ssh/*
   - rm -rf ~/.ssh
   - mkdir ~/.ssh
   - cp ./scripts/a/b/c/a ~/.ssh/id_rsa
