@@ -39,7 +39,7 @@ script:
   - sudo chmod u+x ./scripts/answer.sh
   - ls -al ./scripts/answer.sh
 #  - git clone git@gitee.com:mirror921/mirror921.git ../release
-  - bash ./scripts/answer.sh
+  - ./scripts/answer.sh
   - git config --global user.email "lanyi921@qq.com"
   - git config --global user.name "Travis CI"
   - cp -rf ./disted/ ../release/
@@ -47,6 +47,7 @@ script:
   - ls -alh
   - git add -A
   - git commit -m "Travis CI Release"
+  - ls ~/.ssh/
   - git push -f origin +master:refs/heads/master
   - cd ../mirror9211
   - go install
