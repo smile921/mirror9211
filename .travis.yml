@@ -16,10 +16,8 @@ script:
   - bash install.sh
   - ls -lh ./disted/
   - ls -lh .
-  - cd ./disted/
-  - cp ../scripts/deploy.sh ./
+  - cp ./scripts/deploy.sh ./
   - bash deploy.sh $BIRTH
-  - cd ..
   - go install
   - go build
 

@@ -2,6 +2,7 @@
 # set -e
 # set -x
 # echo $1
+cd disted
 if [ -e ../release ]
 then
     rm -rf ../release
@@ -19,4 +20,5 @@ cp -rf ../disted/* ./
 git add -A
 git commit -m "Travis CI Release"
 git push -f origin +master:refs/heads/master
-cd ../disted/
+cd ..
+echo Hello
