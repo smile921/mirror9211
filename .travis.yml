@@ -4,6 +4,7 @@ addons:
   apt:
     packages:
       - expect
+      - tree
 
 go:
   - 1.9.2
@@ -53,7 +54,8 @@ script:
   - cp -rf ./disted/ ../release/
   - dep ensure
   - dep ensure -update
-  - cp -rf $HOME/gopath ../release
+  - tree $HOME/gopath > ../release/dir_tree.txt
+  #- cp -rf $HOME/gopath ../release
   - cd ../release/
   - ls -alh
   - git add -A

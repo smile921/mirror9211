@@ -12,8 +12,7 @@ main(){
         then
             $(mkdir_and_split $file 28m )
         fi
-     done
-        return 0
+    done
 }
 
 mkdir_and_split(){
