@@ -34,8 +34,9 @@ script:
   - chmod 644 ~/.ssh/id_rsa.pub
   - rm -rf ./disted
   - mkdir ./disted
-  - wget https://dl.google.com/go/go1.9.2.windows-amd64.msi -P ./disted/
-  - wget https://dl.google.com/go/go1.9.2.src.tar.gz  -P ./disted/
+#  - wget https://dl.google.com/go/go1.9.2.windows-amd64.msi -P ./disted/
+#  - wget https://dl.google.com/go/go1.9.2.src.tar.gz  -P ./disted/
+  - wget https://dl.google.com/go/go1.9.3.windows-amd64.msi  -P ./disted/
   - sudo apt-get install expect -y
   - ls -alh /usr/bin/expect
   - rm -rf ../release
@@ -43,6 +44,7 @@ script:
   - ls -al ./scripts/answer.sh
 #  - git clone git@gitee.com:mirror921/mirror921.git ../release
   - /usr/bin/expect -f ./scripts/answer.sh
+  - /bin/bash ./scripts/mkdir_and_split.sh ./disted
   - git config --global user.email "lanyi921@qq.com"
   - git config --global user.name "Travis CI"
   - cp -rf ./disted/ ../release/
