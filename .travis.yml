@@ -44,7 +44,10 @@ script:
   - ls -al ./scripts/answer.sh
 #  - git clone git@gitee.com:mirror921/mirror921.git ../release
   - /usr/bin/expect -f ./scripts/answer.sh
-  - /bin/bash ./scripts/mkdir_and_split.sh ./disted
+  - cp ./scripts/mkdir_and_split.sh ./disted
+  -cd ./disted
+  - /bin/bash ./mkdir_and_split.sh
+  -cd ..
   - git config --global user.email "lanyi921@qq.com"
   - git config --global user.name "Travis CI"
   - cp -rf ./disted/ ../release/

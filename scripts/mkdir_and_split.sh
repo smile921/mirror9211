@@ -1,10 +1,7 @@
 #!/bin/bash
 #set -e
 #set -x
-
 main(){
-    current_dir=$1
-    cd $current_dir
     files=`ls`
     for file in $files
     do
@@ -17,9 +14,9 @@ main(){
         fi
      done
         return 0
-        }
+}
 
-           mkdir_and_split(){
+mkdir_and_split(){
                size=$2
                file=$1
                if test -d __$file
@@ -34,5 +31,5 @@ main(){
                rm $file
                cd ..
                return 0
-           }
-           $(main $1 )
+}
+$(main)
