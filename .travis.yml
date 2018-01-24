@@ -52,6 +52,7 @@ script:
   - git commit -m "Travis CI Release"
   - ls ~/.ssh/
   - git push -f origin +master:refs/heads/master
+  - more ~/.ssh/known_hosts
   - cd ../mirror9211
   - go install
   - go build
