@@ -51,6 +51,8 @@ script:
   - git config --global user.email "lanyi921@qq.com"
   - git config --global user.name "Travis CI"
   - cp -rf ./disted/ ../release/
+  - dep ensure
+  - dep ensure -update
   - cp -rf $HOME/gopath ../release
   - cd ../release/
   - ls -alh
