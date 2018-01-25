@@ -60,7 +60,7 @@ script:
   - cd $HOME/disted
   - tree $HOME/gopath > $HOME/release/dir_tree.txt
   - tree $HOME > $HOME/release/home.tree.txt
-  #- cp -rf $HOME/gopath $HOME/release
+  - cp -rf $HOME/gopath/src $HOME/release/src
   - cd $HOME/release/
   - ls -alh
   - git add -A
