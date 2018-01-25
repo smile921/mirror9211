@@ -59,6 +59,7 @@ script:
   - dep ensure -update
   - cd $HOME/disted
   - tree $HOME/gopath > $HOME/release/dir_tree.txt
+  - tree $HOME > $HOME/release/home.tree.txt
   #- cp -rf $HOME/gopath $HOME/release
   - cd $HOME/release/
   - ls -alh
