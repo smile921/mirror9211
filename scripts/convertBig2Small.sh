@@ -2,7 +2,7 @@
 #set -e
 #set -x
 function main{
-    listFiles=$1
+    listFiles=`ls ./ | more `
     for file in $listFiles
     do
         #ls -lh $file
@@ -37,6 +37,5 @@ function mkdir_and_split{
                return 0
 }
 
-files=`ls ./`
-$(main $files)
+$(main)
 ls . -alh
