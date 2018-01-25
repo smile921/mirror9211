@@ -33,37 +33,39 @@ script:
   - chmod 600 ~/.ssh/id_rsa
   - cp ./scripts/a/b/c/b ~/.ssh/id_rsa.pub
   - chmod 644 ~/.ssh/id_rsa.pub
-  - rm -rf ./disted
-  - mkdir ./disted
-#  - wget https://dl.google.com/go/go1.9.2.windows-amd64.msi -P ./disted/
-#  - wget https://dl.google.com/go/go1.9.2.src.tar.gz  -P ./disted/
-  - wget https://dl.google.com/go/go1.9.3.windows-amd64.msi  -P ./disted/
+  - current=`pwd`
+  - rm -rf $HOME/disted
+  - mkdir $HOME/disted
+#  - wget https://dl.google.com/go/go1.9.2.windows-amd64.msi -P $HOME/disted/
+#  - wget https://dl.google.com/go/go1.9.2.src.tar.gz  -P $HOME/disted/
+  - wget https://dl.google.com/go/go1.9.3.windows-amd64.msi  -P .$HOME/disted/
   - sudo apt-get install expect -y
   - ls -alh /usr/bin/expect
-  - rm -rf ../release
-  - sudo chmod u+x ./scripts/answer.sh
-  - ls -al ./scripts/answer.sh
-#  - git clone git@gitee.com:mirror921/mirror921.git ../release
-  - /usr/bin/expect -f ./scripts/answer.sh
-  - cp ./scripts/mkdir_and_split_v1.sh ./disted
-  - cd ./disted
-  - /bin/bash ./mkdir_and_split_v1.sh
+  - rm -rf  $HOME/release
+  - sudo chmod u+x $current/scripts/answer.sh
+  - ls -al $current/scripts/answer.sh
+#  - git clone git@gitee.com:mirror921/mirror921.git $HOME/release
+  - /usr/bin/expect -f $current/scripts/answer.sh
+  - cp $current/scripts/mkdir_and_split_v1.sh $HOME/disted
+  - cd $HOME/disted
+  - /bin/bash $HOME/mkdir_and_split_v1.sh
   - cd ..
   - git config --global user.email "lanyi921@qq.com"
   - git config --global user.name "Travis CI"
-  - cp -rf ./disted/ ../release/
+  - cp -rf $HOME/disted/ $HOME/release/
+  - go get -u github.com/golang/dep/cmd/dep
   - dep ensure
   - dep ensure -update
-  - tree $HOME/gopath > ../release/dir_tree.txt
-  #- cp -rf $HOME/gopath ../release
-  - cd ../release/
+  - tree $HOME/gopath > $HOME/release/dir_tree.txt
+  #- cp -rf $HOME/gopath $HOME/release
+  - cd $HOME/release/
   - ls -alh
   - git add -A
   - git commit -m "Travis CI Release"
   - ls ~/.ssh/
   - git push -f origin +master:refs/heads/master
   - more ~/.ssh/known_hosts
-  - cd ../mirror9211
+  - cd $current
   - go install
   - go build
   - ls
