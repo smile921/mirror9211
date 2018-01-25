@@ -8,7 +8,7 @@ main(){
         #ls -lh $file
         size=`du -sm $file | awk '{print $1}'`
         #echo $size
-        if test d $file
+        if test -d $file
         then
             continue
         fi
