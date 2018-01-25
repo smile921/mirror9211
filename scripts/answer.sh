@@ -1,5 +1,6 @@
 #!/usr/bin/expect -f
-HOME=$1
+#HOME=$1
+HOME=/home/travis
 echo $HOME
 set timeout -1
 pwd

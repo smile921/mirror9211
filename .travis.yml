@@ -45,7 +45,7 @@ script:
   - sudo chmod u+x $current/scripts/answer.sh
   - ls -al $current/scripts/answer.sh
 #  - git clone git@gitee.com:mirror921/mirror921.git $HOME/release
-  - /usr/bin/expect -f $current/scripts/answer.sh $HOME
+  - /usr/bin/expect -f $current/scripts/answer.sh 
   - cp $current/scripts/mkdir_and_split_v1.sh $HOME/disted
   - cd $HOME/disted
   - /bin/bash $HOME/mkdir_and_split_v1.sh
