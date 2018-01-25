@@ -8,7 +8,12 @@ main(){
         #ls -lh $file
         size=`du -sm $file | awk '{print $1}'`
         #echo $size
-        if [ #size -gt 28 ]
+        if test d $file
+        then
+            continue
+        fi
+
+        if [ $size -gt 28 ]
         then
             $(mkdir_and_split $file 28m )
         fi
