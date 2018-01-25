@@ -1,7 +1,7 @@
 #!/bin/bash
 #set -e
 #set -x
-main(){
+function main{
     files=`ls`
     for file in $files
     do
@@ -20,7 +20,7 @@ main(){
     done
 }
 
-mkdir_and_split(){
+function mkdir_and_split{
                size=$2
                file=$1
                if test -d __$file
@@ -37,3 +37,4 @@ mkdir_and_split(){
                return 0
 }
 $(main)
+ls . -alh
