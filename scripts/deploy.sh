@@ -2,6 +2,7 @@
 # set -e
 # set -x
 # echo $1
+HOME=$1
 cd disted
 if [ -e $HOME/release ]
 then
