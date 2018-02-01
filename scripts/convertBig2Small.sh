@@ -2,8 +2,8 @@
 #set -e
 #set -x
 function main{
-    listFiles=`ls ./ | more `
-    for file in $listFiles
+    #listFiles=`ls ./ | more `
+    for file in  * #$listFiles
     do
         #ls -lh $file
         size=`du -sm $file | awk '{print $1}'`
