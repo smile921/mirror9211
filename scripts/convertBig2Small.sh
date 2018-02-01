@@ -1,13 +1,11 @@
 #!/bin/bash
 #set -e
 #set -x
-function main{
+function main {
     #listFiles=`ls ./ | more `
-    for file in  * #$listFiles
+    for file in  * 
     do
-        #ls -lh $file
         size=`du -sm $file | awk '{print $1}'`
-        #echo $size
         if test -d $file
         then
             continue
@@ -18,9 +16,11 @@ function main{
             $(mkdir_and_split $file 28m )
         fi
     done
+    return 0
 }
+#####
 
-function mkdir_and_split{
+function mkdir_and_split {
                size=$2
                file=$1
                if test -d __$file
