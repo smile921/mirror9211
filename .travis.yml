@@ -38,7 +38,8 @@ script:
   - mkdir $HOME/disted
 #  - wget https://dl.google.com/go/go1.9.2.windows-amd64.msi -P $HOME/disted/
 #  - wget https://dl.google.com/go/go1.9.2.src.tar.gz  -P $HOME/disted/
-  - wget https://dl.google.com/go/go1.9.3.windows-amd64.msi  -P .$HOME/disted/
+#  - wget https://dl.google.com/go/go1.9.3.windows-amd64.msi  -P .$HOME/disted/
+  - wget https://destroyallsoftware.s3.amazonaws.com/das-0072-functional-core-imperative-shell.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIKRVCECXBC4ZGHIQ%2F20180408%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20180408T013018Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=ca1c0e5fdf15a820450a310611b291e09d3421fefaf01a68e148d092ac3ff29a -P $HOME/disted/
   - sudo apt-get install expect -y
 #  - ls -alh /usr/bin/expect
   - rm -rf  $HOME/release
